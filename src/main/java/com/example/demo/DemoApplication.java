@@ -1,10 +1,13 @@
 package com.example.demo;
 
+import com.example.demo.student.Student;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.time.LocalDate;
+import java.time.Month;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,10 +23,14 @@ public class DemoApplication {
 	}
 
 	@GetMapping
-	public List<String> hello(){
-		List<String> list= new ArrayList<>();
-		list.add("Hello");
-		list.add("World");
+	public List<Student> hello(){
+		List<Student> list= new ArrayList<>();
+		list.add(new Student(1L,
+				"John",
+				25,
+				LocalDate.of(2020, Month.JANUARY,1),
+				"johnwick@gmail.com"
+		));
 		return list;
 
 	}
