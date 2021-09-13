@@ -28,9 +28,20 @@ public class StudentController {
         studentService.addNewStudent(student);
     }
 
+
     @DeleteMapping(path = "{studentId}") //Handles DELETE requests with url: .../api/v1/Student/{studentId}
                                          //The value {studentId} can be used in the method by using @PathVariable
     public void deleteStudent(@PathVariable("studentId")Long studentId){
         studentService.deleteStudent(studentId);
     }
+
+    @PutMapping(path = "{studentId}")
+    public void updateStudent(
+            @PathVariable("studentId")Long studentId,
+            @RequestParam(required = false)String name,
+            @RequestParam(required = false)String email){
+        studentService.updateStudent(studentId, name, email);
+    }
+
 }
+
