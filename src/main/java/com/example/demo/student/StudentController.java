@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping(path = "api/v1/Student")
+@RequestMapping(path = "api/v1/Student") // This class will handle url with .../api/v1/Student/
 public class StudentController {
 
     private final StudentService studentService;
@@ -23,12 +23,13 @@ public class StudentController {
     }
 
 
-    @PostMapping
+    @PostMapping //Handles POST requests.
     public void registerNewStudent(@RequestBody Student student){
         studentService.addNewStudent(student);
     }
 
-    @DeleteMapping(path = "{studentId}")
+    @DeleteMapping(path = "{studentId}") //Handles DELETE requests with url: .../api/v1/Student/{studentId}
+                                         //The value {studentId} can be used in the method by using @PathVariable
     public void deleteStudent(@PathVariable("studentId")Long studentId){
         studentService.deleteStudent(studentId);
     }
