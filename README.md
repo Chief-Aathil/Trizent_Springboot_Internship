@@ -1,10 +1,10 @@
-##Tutorials:  
+## Tutorials:  
 - [Spring Boot Tutorial  | Full In-Depth Course][DailyCodeBuffer YT Tutorial] - by DailyCodeBuffer
 - [Spring Boot Tutorial | Full Course [2021] [NEW]][AmigosCode YT Tutorial] - by AmigosCode (shared by Freecodecamp.org)
 
 You can use POSTMAN to test out the API,
 
-##Packaging
+## Packaging
 To package your application:
 
 - Clean. Maven >> Clean.(Application must be stopped).
