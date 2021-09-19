@@ -1,7 +1,16 @@
 package com.example.demo.entity;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity // this enables the class to interact with db
 public class Department {
 
+    // to specify the primary key
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long departmentId;
     private String departmentName;
     private String departmentAddress;
