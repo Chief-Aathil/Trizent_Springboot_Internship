@@ -8,4 +8,5 @@ import org.springframework.stereotype.Repository;
 public interface DepartmentRepository extends JpaRepository<Department,Long> {
     //The two parameter types of JpaRepository are Entity and the primary key
     public Department findByDepartmentName(String departmentName);
+    public Department findByDepartmentNameIgnoreCase(String departmentName);
 }
