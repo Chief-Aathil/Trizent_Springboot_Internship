@@ -3,6 +3,8 @@ package com.example.demo.service;
 import com.example.demo.entity.Department;
 import com.example.demo.repository.DepartmentRepository;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,6 +35,8 @@ class DepartmentServiceTest {
     }
 
     @Test
+    @DisplayName("Get Data when based on valid Department Name")
+//    @Disabled // to disable this test method
     public void whenValidDepartmentName_thenDepartmentFound(){
         /*
         * To test findDepartmentByName()
