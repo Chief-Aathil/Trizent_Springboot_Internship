@@ -31,4 +31,24 @@ class DepartmentServiceTest {
         Mockito.when(departmentRepository.findByDepartmentNameIgnoreCase("IT"))
                 .thenReturn(department);
     }
+
+    @Test
+    public void whenValidDepartmentName_thenDepartmentFound(){
+        /*
+        * To test findDepartmentByName()
+        * Requires:
+        *   Objects: DepartmentService, DepartmentRepository
+        *
+        * */
+        String departmentName = "IT";
+
+        //fetchDepartmentByName() should be mocked.
+        // this function calls DepartmentRepository.findByDepartmentNameIgnoreCase()
+        // so DepartmentRepository should be mocked.
+        Department found = departmentService.fetchDepartmentByName(departmentName);//
+
+        //checking if the passed name is same as the found name.
+        assertEquals(departmentName, found.getDepartmentName());
+
+    }
 }
